@@ -1,0 +1,5 @@
+ip link add dummy0 type dummy
+/sbin/ifconfig dummy0 8.8.8.8 netmask 255.255.255.255 up
+/sbin/ifconfig eth0 100.0.89.8 netmask 255.255.255.0 up
+/sbin/ifconfig eth1 100.0.58.8 netmask 255.255.255.0 up
+/etc/init.d/quagga start

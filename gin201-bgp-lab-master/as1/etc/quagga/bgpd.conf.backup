@@ -1,0 +1,24 @@
+router bgp 1
+      bgp router-id 1.1.1.1
+      network 1.0.0.0/8
+      neighbor 100.0.14.4 remote-as 4
+      neighbor 100.0.14.4 route-map rm-cust-in in
+      neighbor 100.0.14.4 route-map rm-cust-out out
+      neighbor 100.0.15.5 remote-as 5
+      neighbor 100.0.15.5 route-map rm-cust-in in
+      neighbor 100.0.15.5 route-map rm-cust-out out
+      neighbor 100.0.13.3 remote-as 3
+      neighbor 100.0.13.3 route-map rm-peer-in in
+      neighbor 100.0.13.3 route-map rm-peer-out out
+      neighbor 100.0.12.2 remote-as 2
+      neighbor 100.0.12.2 route-map rm-trans-in in
+      neighbor 100.0.12.2 route-map rm-trans-out out
+
+
+route-map rm-cust-in permit 10
+route-map rm-cust-out permit 10
+route-map rm-peer-in permit 10
+route-map rm-peer-out permit 10
+route-map rm-trans-in permit 10
+route-map rm-trans-out permit 10
+
